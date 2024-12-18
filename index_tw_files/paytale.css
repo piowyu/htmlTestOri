@@ -1,0 +1,31 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  /* 隐藏水平滚动条 */
+}
+
+.content {
+  text-align: center;
+  color: white;
+  font-family: 'Noto Sans TC', sans-serif;
+
+}
+
+.content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.content h2 {
+  color: #b9e216;
+  /* font-size: 26pt; */
+}
+
+.content p {
+  /* font-size: 22pt; */
+}
+
+.height {
+  color: #fff001;
+}

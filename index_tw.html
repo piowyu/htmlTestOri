@@ -1,0 +1,178 @@
+
+<!-- saved from url=(0066)https://dev.apex-win.com/Webview/WT002/index_tw.html?1723189792957 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<style>
+		h4{text-align:left}
+	</style>
+		
+	<link href="./index_tw_files/paytale.css" rel="stylesheet" type="text/css">
+	<link href="./index_tw_files/notosanstc.css" rel="stylesheet" type="text/css">
+	<script>
+		window.addEventListener("message", function (event)
+		{
+			if (event.data === "scrollToTop")
+			{
+				window.scrollTo(0, 0);
+			}
+		});    
+	</script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="content">
+			<!-- <body bgcolor="black"> -->
+			<h2>DEV</h2>
+			<h2>遊戲說明</h2>
+			<p align="left">
+				<img style="vertical-align:middle;" src="./index_tw_files/star.webp" align="left" width=25 > 玩家進入遊戲時，可在砲台處點擊<font color="gold">【＋】、【－】</font>按鈕調整發射子彈的押注額。<br style="clear: both;">
+				<img style="vertical-align:middle;" src="./index_tw_files/star.webp" align="left" width=25 > 若設置砲台為<font color="gold">【自動】</font>，系統將會自動延續原有押注額，朝向指定的方向發射子彈。<br>
+				<img style="vertical-align:middle;" src="./index_tw_files/star.webp" align="left" width=25 > 若設置砲台為<font color="gold">【鎖定】</font>，系統將會自動延續原有押注額，只針對鎖定的物種進行攻擊。<br>
+				<img style="vertical-align:middle;" src="./index_tw_files/star.webp" align="left" width=25 > 子彈發射後，若擊中物種且捕獲成功即可得分。<br>
+				<br>
+			</p>
+
+			<h2>賠率說明</h2>
+			<p>
+				<img style="vertical-align:middle;" src="./index_tw_files/star.webp" width=25 > 彩金計算方式：押注額 x 擊中物種賠率 = 獲得彩金 <img style="vertical-align:middle;" src="./index_tw_files/star.webp" width=25 ><br>
+			</p>
+			
+			<p align="left" id="imageContainer">
+				<!-- 在每組前端加上這組的魚名稱，之間用 Tab 區隔，方便之後整理魚 -->
+				<!-- 鑽頭蟹  火山蟹	鋸齒蟹	導彈蟹	海龍王 魔鬼鯊	 -->
+				<img src="./index_tw_files/Fish_Icon/fish_icon_25401.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_25402.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_25404.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_25403.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_16201.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_5101.webp" width=90 style="margin: 3px;">
+				<!-- 霸王鯊  爆彈鯊	刺鰭鯊	冰斧鯊	虎牙鯊	幽光魚 -->
+				<img src="./index_tw_files/Fish_Icon/fish_icon_16801.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_10801.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_11501.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_14001.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_11401.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_11001.webp" width=90 style="margin: 3px;">
+				<!-- 大嘴鱷	地皇鯰	珊瑚蜥	蝠魟魚	背刀魚	美殼蟹 -->
+				<img src="./index_tw_files/Fish_Icon/fish_icon_13201.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_20801.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_14501.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_11301.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_16101.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_12901.webp" width=90 style="margin: 3px;">
+				<!-- 機電蜥	綠晶龜	冰火魚  彩礁龍	星寶 	科技魟 -->
+				<img src="./index_tw_files/Fish_Icon/fish_icon_15501.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_14801.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_11201.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_13901.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_5201.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_13601.webp" width=90 style="margin: 3px;">
+				<!-- 飛天兔	懶水豚	豬漁夫	聖代狗	眠柴犬	小熊貓 -->
+				<img src="./index_tw_files/Fish_Icon/fish_icon_14701.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_13301.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_14601.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_14401.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_14901.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_13401.webp" width=90 style="margin: 3px;">
+				<!-- 灰樹懶	刺蝟鼠	紳士蛙	開運狸	花蠑螈	角蛞蝓 -->
+				<img src="./index_tw_files/Fish_Icon/fish_icon_15101.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_13701.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_14201.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_14301.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_15301.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_13001.webp" width=90 style="margin: 3px;">
+				<!-- 天使魚	綠蠵龜	大螯蝦	章魚	 刺河豚	水母 -->
+				<img src="./index_tw_files/Fish_Icon/fish_icon_25515.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_25514.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_25520.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_25519.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_25512.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_25511.webp" width=90 style="margin: 3px;">
+				<!-- 海馬	真赤鯛	藍倒吊	比目魚	蝶魚	 小丑魚 -->
+				<img src="./index_tw_files/Fish_Icon/fish_icon_25517.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_25506.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_25505.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_25504.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_25503.webp" width=90 style="margin: 3px;">
+				<img src="./index_tw_files/Fish_Icon/fish_icon_25502.webp" width=90 style="margin: 3px;">
+				<br><br>
+			</p>
+			
+			<!-- <p>
+				<font size="2">※金色邊框為高級物種，成功捕獲後才能確認稀有度。</font><br>
+				<br>
+			</p> -->
+
+			<h2>特殊武器</h2>
+			<p>
+				<img style="vertical-align:middle;" src="./index_tw_files/star.webp" width=25 > 遊戲中有機會出現特殊武器螃蟹，捕獲會獲得武器。<img style="vertical-align:middle;" src="./index_tw_files/star.webp" width=25 ><br>
+			</p>
+			<p align="left">
+				<img style="vertical-align:middle;" src="./index_tw_files/img_icon_Drill.webp" align="left" width=120>
+				<img style="vertical-align:middle;" src="./index_tw_files/star.webp" align="left" width=25 > 鑽頭砲發射出去後，會對路徑上的所有物種進行攻擊，鑽頭砲經過一段時間會消失，並且會結算期間獲得的所有彩金。<br>
+				<br><br><br><br>
+				<img style="vertical-align:middle;" src="./index_tw_files/img_icon_Meteor.webp" align="left" width=120>
+				<img style="vertical-align:middle;" src="./index_tw_files/star.webp" align="left" width=25 > 火山砲發射出去後，會對畫面上的所有物種進行攻擊，火山砲經過一段時間會消失，並且會結算期間獲得的所有彩金。<br>
+				<br><br><br><br>
+				<img src="./index_tw_files/img_icon_Bouncy.webp" align="left" width=120>
+				<img style="vertical-align:middle;" src="./index_tw_files/star.webp" align="left" width=25 > 鋸齒砲發射出去後，會對路徑上的所有物種進行攻擊，鋸齒砲經過一段時間會消失，並且會結算期間獲得的所有彩金。<br>
+				<br><br><br><br>
+				<img src="./index_tw_files/img_icon_Missile.webp" align="left" width=120>
+				<img style="vertical-align:middle;" src="./index_tw_files/star.webp" align="left" width=25 > 導彈砲發射出去後，會對區域內的所有物種進行攻擊，導彈砲經過一段時間會消失，並且會結算期間獲得的所有彩金。<br>	
+				<br><br>
+			</p>
+			
+			<p>
+				<font size="2">※30秒內沒發射特殊武器會由系統自動發射。</font><br>
+				<br>
+			</p>
+
+			<h2>介面說明</h2>
+			<img src="./index_tw_files/UIHelper.webp"><br>
+			<br>
+			
+		</div>
+	</div>
+
+	<script>
+        function getQueryParam(param) 
+		{
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+		
+		function insertAnImage(imagePath) 
+		{
+            const newImage = document.createElement("img");
+            newImage.src = imagePath;
+            newImage.width = 90;
+            newImage.style.margin = "3px";
+
+            const imageContainer = document.getElementById("imageContainer");
+			
+            imageContainer.insertBefore(newImage, imageContainer.firstChild);
+        }
+
+        function insertImageBasedOnURL() 
+		{
+			const show = getQueryParam("activity");
+			if (!show) return;
+
+			const activities = show.split(',');
+
+			activities.forEach(activity => 
+			{
+				switch(activity)
+				{
+					case "7": 
+						insertAnImage("./index_tw_files/Fish_Icon/fish_icon_9301.webp");
+						break;	
+				}
+			});
+		}
+
+        window.onload = insertImageBasedOnURL;		
+	</script>
+
+</body></html>
