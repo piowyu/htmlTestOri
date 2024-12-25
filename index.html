@@ -1,178 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta name="color-scheme" content="light"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="robots" content="noindex, nofollow"/>
+        <style>
+            *, *::before, *::after {
+                box-sizing: border-box;
+            }
 
-<!-- saved from url=(0066)https://dev.apex-win.com/Webview/WT002/index_tw.html?1723189792957 -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	
-	<style>
-		h4{text-align:left}
-	</style>
-		
-	<link href="./index_tw_files/paytale.css" rel="stylesheet" type="text/css">
-	<link href="./index_tw_files/notosanstc.css" rel="stylesheet" type="text/css">
-	<script>
-		window.addEventListener("message", function (event)
-		{
-			if (event.data === "scrollToTop")
-			{
-				window.scrollTo(0, 0);
-			}
-		});    
-	</script>
-</head>
+            html, body {
+                font: 400 20px/1.5 system-ui, Arial, Helvetica, sans-serif;
+                /* font-size: clamp(12px, 4vw, 20px); */
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+                overflow-y: auto;
+                overflow-wrap: break-word;
+            }
 
-<body>
-	<div class="container">
-		<div class="content">
-			<-- <body bgcolor="black"> -->
-			<h2>DEV</h2>
-			<h2>遊戲說明</h2>
-			<p align="left">
-				<img style="vertical-align:middle;" src="./index_tw_files/star.webp" align="left" width=25 > 玩家進入遊戲時，可在砲台處點擊<font color="gold">【＋】、【－】</font>按鈕調整發射子彈的押注額。<br style="clear: both;">
-				<img style="vertical-align:middle;" src="./index_tw_files/star.webp" align="left" width=25 > 若設置砲台為<font color="gold">【自動】</font>，系統將會自動延續原有押注額，朝向指定的方向發射子彈。<br>
-				<img style="vertical-align:middle;" src="./index_tw_files/star.webp" align="left" width=25 > 若設置砲台為<font color="gold">【鎖定】</font>，系統將會自動延續原有押注額，只針對鎖定的物種進行攻擊。<br>
-				<img style="vertical-align:middle;" src="./index_tw_files/star.webp" align="left" width=25 > 子彈發射後，若擊中物種且捕獲成功即可得分。<br>
-				<br>
-			</p>
+            ::-webkit-scrollbar {
+                width: 7px;
+            }
 
-			<h2>賠率說明</h2>
-			<p>
-				<img style="vertical-align:middle;" src="./index_tw_files/star.webp" width=25 > 彩金計算方式：押注額 x 擊中物種賠率 = 獲得彩金 <img style="vertical-align:middle;" src="./index_tw_files/star.webp" width=25 ><br>
-			</p>
-			
-			<p align="left" id="imageContainer">
-				<!-- 在每組前端加上這組的魚名稱，之間用 Tab 區隔，方便之後整理魚 -->
-				<!-- 鑽頭蟹  火山蟹	鋸齒蟹	導彈蟹	海龍王 魔鬼鯊	 -->
-				<img src="./index_tw_files/Fish_Icon/fish_icon_25401.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_25402.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_25404.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_25403.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_16201.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_5101.webp" width=90 style="margin: 3px;">
-				<!-- 霸王鯊  爆彈鯊	刺鰭鯊	冰斧鯊	虎牙鯊	幽光魚 -->
-				<img src="./index_tw_files/Fish_Icon/fish_icon_16801.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_10801.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_11501.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_14001.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_11401.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_11001.webp" width=90 style="margin: 3px;">
-				<!-- 大嘴鱷	地皇鯰	珊瑚蜥	蝠魟魚	背刀魚	美殼蟹 -->
-				<img src="./index_tw_files/Fish_Icon/fish_icon_13201.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_20801.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_14501.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_11301.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_16101.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_12901.webp" width=90 style="margin: 3px;">
-				<!-- 機電蜥	綠晶龜	冰火魚  彩礁龍	星寶 	科技魟 -->
-				<img src="./index_tw_files/Fish_Icon/fish_icon_15501.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_14801.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_11201.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_13901.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_5201.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_13601.webp" width=90 style="margin: 3px;">
-				<!-- 飛天兔	懶水豚	豬漁夫	聖代狗	眠柴犬	小熊貓 -->
-				<img src="./index_tw_files/Fish_Icon/fish_icon_14701.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_13301.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_14601.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_14401.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_14901.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_13401.webp" width=90 style="margin: 3px;">
-				<!-- 灰樹懶	刺蝟鼠	紳士蛙	開運狸	花蠑螈	角蛞蝓 -->
-				<img src="./index_tw_files/Fish_Icon/fish_icon_15101.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_13701.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_14201.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_14301.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_15301.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_13001.webp" width=90 style="margin: 3px;">
-				<!-- 天使魚	綠蠵龜	大螯蝦	章魚	 刺河豚	水母 -->
-				<img src="./index_tw_files/Fish_Icon/fish_icon_25515.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_25514.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_25520.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_25519.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_25512.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_25511.webp" width=90 style="margin: 3px;">
-				<!-- 海馬	真赤鯛	藍倒吊	比目魚	蝶魚	 小丑魚 -->
-				<img src="./index_tw_files/Fish_Icon/fish_icon_25517.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_25506.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_25505.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_25504.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_25503.webp" width=90 style="margin: 3px;">
-				<img src="./index_tw_files/Fish_Icon/fish_icon_25502.webp" width=90 style="margin: 3px;">
-				<br><br>
-			</p>
-			
-			<!-- <p>
-				<font size="2">※金色邊框為高級物種，成功捕獲後才能確認稀有度。</font><br>
-				<br>
-			</p> -->
+            ::-webkit-scrollbar-thumb {
+                background: #BBB;
+                border-radius: 5px;
+            }
 
-			<h2>特殊武器</h2>
-			<p>
-				<img style="vertical-align:middle;" src="./index_tw_files/star.webp" width=25 > 遊戲中有機會出現特殊武器螃蟹，捕獲會獲得武器。<img style="vertical-align:middle;" src="./index_tw_files/star.webp" width=25 ><br>
-			</p>
-			<p align="left">
-				<img style="vertical-align:middle;" src="./index_tw_files/img_icon_Drill.webp" align="left" width=120>
-				<img style="vertical-align:middle;" src="./index_tw_files/star.webp" align="left" width=25 > 鑽頭砲發射出去後，會對路徑上的所有物種進行攻擊，鑽頭砲經過一段時間會消失，並且會結算期間獲得的所有彩金鑽頭砲發射出去後，會對路徑上的所有物種進行攻擊，鑽頭砲經過一段時間會消失，並且會結算期間獲得的所有彩金鑽頭砲發射出去後，會對路徑上的所有物種進行攻擊，鑽頭砲經過一段時間會消失，並且會結算期間獲得的所有彩金鑽頭砲發射出去後，會對路徑上的所有物種進行攻擊，鑽頭砲經過一段時間會消失，並且會結算期間獲得的所有彩金鑽頭砲發射出去後，會對路徑上的所有物種進行攻擊，鑽頭砲經過一段時間會消失，並且會結算期間獲得的所有彩金鑽頭砲發射出去後，會對路徑上的所有物種進行攻擊，鑽頭砲經過一段時間會消失，並且會結算期間獲得的所有彩金鑽頭砲發射出去後，會對路徑上的所有物種進行攻擊，鑽頭砲經過一段時間會消失，並且會結算期間獲得的所有彩金鑽頭砲發射出去後，會對路徑上的所有物種進行攻擊，鑽頭砲經過一段時間會消失，並且會結算期間獲得的所有彩金鑽頭砲發射出去後，會對路徑上的所有物種進行攻擊，鑽頭砲經過一段時間會消失，並且會結算期間獲得的所有彩金。<br>
-				<br><br><br><br>
-				<img style="vertical-align:middle;" src="./index_tw_files/img_icon_Meteor.webp" align="left" width=120>
-				<img style="vertical-align:middle;" src="./index_tw_files/star.webp" align="left" width=25 > The ROCKET DRILL hits every species along its path when fired. It disappears after a while, settling all earnings acquired during this period.The ROCKET DRILL hits every species along its path when fired. It disappears after a while, settling all earnings acquired during this period.The ROCKET DRILL hits every species along its path when fired. It disappears after a while, settling all earnings acquired during this period.The ROCKET DRILL hits every species along its path when fired. It disappears after a while, settling all earnings acquired during this period.The ROCKET DRILL hits every species along its path when fired. It disappears after a while, settling all earnings acquired during this period.The ROCKET DRILL hits every species along its path when fired. It disappears after a while, settling all earnings acquired during this period.The ROCKET DRILL hits every species along its path when fired. It disappears after a while, settling all earnings acquired during this period.The ROCKET DRILL hits every species along its path when fired. It disappears after a while, settling all earnings acquired during this period.The ROCKET DRILL hits every species along its path when fired. It disappears after a while, settling all earnings acquired during this period.
-				<br><br><br><br>
-				<img src="./index_tw_files/img_icon_Bouncy.webp" align="left" width=120>
-				<img style="vertical-align:middle;" src="./index_tw_files/star.webp" align="left" width=25 > 鋸齒砲發射出去後，會對路徑上的所有物種進行攻擊，鋸齒砲經過一段時間會消失，並且會結算期間獲得的所有彩金。<br>
-				<br><br><br><br>
-				<img src="./index_tw_files/img_icon_Missile.webp" align="left" width=120>
-				<img style="vertical-align:middle;" src="./index_tw_files/star.webp" align="left" width=25 > 導彈砲發射出去後，會對區域內的所有物種進行攻擊，導彈砲經過一段時間會消失，並且會結算期間獲得的所有彩金。<br>	
-				<br><br>
-			</p>
-			
-			<p>
-				<font size="2">※30秒內沒發射特殊武器會由系統自動發射。</font><br>
-				<br>
-			</p>
+            ::-webkit-scrollbar-track {
+                background-color: rgba(0, 0, 0, 0);
+            }
 
-			<h2>介面說明</h2>
-			<img src="./index_tw_files/UIHelper.webp"><br>
-			<br>
-			
-		</div>
-	</div>
+            .container {
+                width: 100%;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: .5em;
+                user-select: none;
+                color: #fff;
+            }
 
-	<script>
-        function getQueryParam(param) 
-		{
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
-		
-		function insertAnImage(imagePath) 
-		{
-            const newImage = document.createElement("img");
-            newImage.src = imagePath;
-            newImage.width = 90;
-            newImage.style.margin = "3px";
-
-            const imageContainer = document.getElementById("imageContainer");
-			
-            imageContainer.insertBefore(newImage, imageContainer.firstChild);
-        }
-
-        function insertImageBasedOnURL() 
-		{
-			const show = getQueryParam("activity");
-			if (!show) return;
-
-			const activities = show.split(',');
-
-			activities.forEach(activity => 
-			{
-				switch(activity)
-				{
-					case "7": 
-						insertAnImage("./index_tw_files/Fish_Icon/fish_icon_9301.webp");
-						break;	
-				}
-			});
-		}
-
-        window.onload = insertImageBasedOnURL;		
-	</script>
-
-</body></html>
+            img {
+                font-style: italic;
+                width: auto;
+                height: auto;
+                max-width: 100%;
+                object-fit: cover;
+                vertical-align: middle;
+                margin-top: -.2em;
+                margin-bottom: .2em;
+            }
+        </style>
+        <script>
+            window.addEventListener("message", function(event) {
+                if (event.data === "scrollToTop") {
+                    if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                        //ios需要eventloop確保scrollToTop正確執行
+                        setTimeout(function() {
+                            window.scrollTo({
+                                top: 0,
+                                behavior: 'instant'
+                            });
+                        }, 50);
+                    } else {
+                        window.scrollTo(0, 0);
+                    }
+                }
+            });
+        </script>
+        <script>
+            // [Safari only] gesturestart event: multi finger gestures touching
+            document.addEventListener('gesturestart', function(event) {
+                // 阻止兩指縮放畫面
+                event.preventDefault();
+            });
+        </script>
+    </head>
+    <body>
+        <!-------------------------------------------------------------------
+|
+|   >>> API使用參數 <<<
+|
+|   gameID = [遊戲編號] 必填
+|   lang = [語系代碼]( tw|cn|en|vn|jp|th|es|kr|... ) 預設+備案：tw
+|   page = [介紹頁面]( introduction|operation ) 預設+備案：introduction
+    mode = [黑暗/明亮 模式]( light|dark ) 預設+備案：light
+|
+|   範例： ?gameID=game007&lang=tw&page=operation&mode=dark
+|
+-------------------------------------------------------------------->
+        <main class="container">
+            <h2 style="color: #b9e216; font-family: 'Noto Sans TC', sans-serif; text-align: center;">遊戲說明</h2>
+            <p style="color: #ffffff; font-family: 'Noto Sans TC', sans-serif; text-align: left;" align="left">
+                <img style="vertical-align: middle;" src="https://storage.wanin.tw/omp_ApexWin/news/623bc289efe4f8c9fe041b096533918d.webp" width="25" height="40" align="left"/>
+                玩家進入遊戲時，可在砲台處點擊<span style="color: gold;">【＋】、【－】</span>
+                按鈕調整發射子彈的押注額。<br style="clear: both;"/>
+                <img style="vertical-align: middle;" src="https://storage.wanin.tw/omp_ApexWin/news/35abbf16851536787bbdfcd47ceb5018.webp" width="25" height="40" align="left"/>
+                若設置砲台為<span style="color: gold;">【自動】</span>
+                ，系統將會自動延續原有押注額，朝向指定的方向發射子彈。<br style="clear: both;"/>
+                <img style="vertical-align: middle;" src="https://storage.wanin.tw/omp_ApexWin/news/5652bdab9363ce633c56666218257b26.webp" width="25" height="40" align="left"/>
+                若設置砲台為<span style="color: gold;">【鎖定】</span>
+                ，系統將會自動延續原有押注額，只針對鎖定的物種進行攻擊。<br style="clear: both;"/>
+                <img style="vertical-align: middle;" src="https://storage.wanin.tw/omp_ApexWin/news/30a37246ada261f439f49cc6f1094f93.webp" width="25" height="40" align="left"/>
+                子彈發射後，若擊中物種且捕獲成功即可得分。<br/>
+                <br/>
+            </p>
+            <h2 style="color: #b9e216; font-family: 'Noto Sans TC', sans-serif; text-align: center;">賠率說明</h2>
+            <p style="color: #ffffff; font-family: 'Noto Sans TC', sans-serif; text-align: center;">
+                <img style="max-width: 100%; height: 40px; vertical-align: middle;" src="https://storage.wanin.tw/omp_ApexWin/news/675bf71aab1a41e29423ea1cf62767c7.webp" width="25"/>
+                得分計算方式：押注額ｘ擊中物種賠率 = 得分 <img style="max-width: 100%; height: 40px; vertical-align: middle;" src="https://storage.wanin.tw/omp_ApexWin/news/afd46662f89fc885bd34dcd1d227cde8.webp" width="25"/>
+                <br/>
+            </p>
+            <p id="imageContainer" style="color: #ffffff; font-family: 'Noto Sans TC', sans-serif; text-align: center;" align="left">
+                <img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/45b43422500fc1cda100793ee50f10f6.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/89cd645d28782ac6d83b467e7a52bfc6.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/f7565896e20dc0b946eaa079654a94d6.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/183978abea425b08626e751ab459c3e5.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/d360e65688b6b8e8f989b7f2fb134ff0.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/a0047cb62b316e6b9be60831a02872a9.webp" width="112"/>&nbsp;
+            </p>
+            <p style="color: #ffffff; font-family: 'Noto Sans TC', sans-serif; text-align: center;" align="left">
+                <img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/c39c1b176b7137826a91bda44b7eb246.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/471bdfeac23d4755ddb27fb5273120e4.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/c5f70e33a7ffbb688ddf92b23eb0f51c.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/088c4c1eb26ab8354c90b3da12b3aab9.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/2e7246b0e3cec92a5b237249d1e1a321.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/cbb005f9d74cc1b9b4ba6656611a531c.webp" width="112"/>&nbsp;
+            </p>
+            <p style="color: #ffffff; font-family: 'Noto Sans TC', sans-serif; text-align: center;" align="left">
+                <img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/03a973e8c853529ac58bbd59bb0ca1a2.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/13e3f51bb9075380aacb34456e14ff44.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/daffa8398f13814eeccb206305fd1e44.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/8507e6fc3cbd052008939f2ed7d6c614.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/f48663b2ea4b84daf1cec05e6e297faa.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/18e19b3376be691ab4fa1fbbb1a6fee3.webp" width="112"/>
+            </p>
+            <p style="color: #ffffff; font-family: 'Noto Sans TC', sans-serif; text-align: center;" align="left">
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/6a3b4a48d10d5c9e13caff9ee53d521a.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/683224eaad4d690bc8e20f7e45479043.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/919c346c78260a26b5e993a0b345ea56.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/db3a59f52b8be0adf68fc70624cbaa63.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/26c15670ea839491575a9592e63b048d.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/af070ae826eb71bee401003e20ca19ef.webp" width="112"/>&nbsp;
+            </p>
+            <p style="color: #ffffff; font-family: 'Noto Sans TC', sans-serif; text-align: center;" align="left">
+                <img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/3df8ae20774c7e4e1bf8927290ce855f.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/20a09215c1c3a9abd58786d25d50e925.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/bc151f0acc62f4a794fd0f0bf773a81b.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/2a032966104ea157b532dcc6f1232fb5.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/5286f63aaf010c4d6b79eb1d90aab647.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/f37b667d373d396d9404888471d0e1c3.webp" width="112"/>&nbsp;
+            </p>
+            <p style="color: #ffffff; font-family: 'Noto Sans TC', sans-serif; text-align: center;" align="left">
+                <img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/2d225311965b2d189c8e7f2c8751ceae.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/55676f95c20da7eb675f66bf761e3c23.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/5ff7352d84755ae69979fa33a213da87.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/7bd174ea3039467a4d985379cbb05ae7.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/8fa4235412e71b0875dc6d3bc86ed76e.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/5c7b9e31982f8144515fb71487dacef4.webp" width="112"/>&nbsp;
+            </p>
+            <p style="color: #ffffff; font-family: 'Noto Sans TC', sans-serif; text-align: center;" align="left">
+                <img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/a6899e37b37cc22de0097f3aaa955358.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/50da5be23fdd56b55b83d4b3b94339bc.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/9cfe33cd2dbd61e7f1364221a88298f6.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/00b8f293aff1fa47bf388ed8468e3117.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/288da8a1d5d0c5eb701ff27217a57c25.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/179b8639d5c1e48fd539687204888781.webp" width="112"/>&nbsp;
+            </p>
+            <p style="color: #ffffff; font-family: 'Noto Sans TC', sans-serif; text-align: center;" align="left">
+                <img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/2a03070334fea11af87ffffd948ad924.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/abedde86bdd4a830d9caffe8ee37535b.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/90f01cde70f5179f775ba50afc10aaa1.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/cb4d3d89b3636f0deb39ab01332e6c4d.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/7850e0f8fb761214e24c981e7bf9d04a.webp" width="112"/>
+                &nbsp;<img style="max-width: 100%; height: 112px; margin: 3px;" src="https://storage.wanin.tw/omp_ApexWin/news/c86c4cb162f96a4ffdda8b9e357e4355.webp" width="112"/>
+                <br/>
+                <br/>
+            </p>
+            <h2 style="color: #b9e216; font-family: 'Noto Sans TC', sans-serif; text-align: center;">特殊武器</h2>
+            <p style="color: #ffffff; font-family: 'Noto Sans TC', sans-serif; text-align: center;">
+                <img style="max-width: 100%; height: 40px; vertical-align: middle;" src="https://storage.wanin.tw/omp_ApexWin/news/6dac38c536d64ecc2fce5189dc08b249.webp" width="25"/>
+                &nbsp;遊戲中有機會出現特殊武器螃蟹，捕獲會獲得武器。<img style="max-width: 100%; height: 40px; vertical-align: middle;" src="https://storage.wanin.tw/omp_ApexWin/news/f56ee734e88cb354627d3db333480f20.webp" width="25"/>
+                <br/>
+            </p>
+            <p style="color: #ffffff; font-family: 'Noto Sans TC', sans-serif; text-align: left;" align="left">
+                <img style="max-width: 100%; height: 102px; vertical-align: middle;" src="https://storage.wanin.tw/omp_ApexWin/news/ae090e6da1e0c92779bad701b4bc270b.webp" width="120" align="left"/>
+                <img style="vertical-align: middle;" src="https://storage.wanin.tw/omp_ApexWin/news/1e698c3b505593ac4aadab7175a41295.webp" width="25" height="102" align="left"/>
+                <span style="color: #ffffff;">鑽頭砲發射出去後，會對路徑上的所有物種進行攻擊，鑽頭砲經過一段時間會消失，並且會結算期間獲得的所有彩金。</span>
+                <br/>
+                <br/>
+            </p>
+            <p style="color: #ffffff; font-family: 'Noto Sans TC', sans-serif; text-align: left;" align="left">
+                <span style="color: #ffffff;">
+                    <img style="max-width: 100%; height: 102px; vertical-align: middle;" src="https://storage.wanin.tw/omp_ApexWin/news/2fe412729e96b63b58bde31ebe7996c6.webp" width="120" align="left"/>
+                    <img style="vertical-align: middle;" src="https://storage.wanin.tw/omp_ApexWin/news/acd9f868a378983179431207b97f7eb8.webp" width="25" height="102" align="left"/>火山砲發射出去後，會對畫面上的所有物種進行攻擊，火山砲經過一段時間會消失，並且會結算期間獲得的所有彩金。
+                </span>
+                <br/>
+                <br/>
+            </p>
+            <p style="color: #ffffff; font-family: 'Noto Sans TC', sans-serif; text-align: left;" align="left">
+                <span style="color: #ffffff;">
+                    <img style="max-width: 100%; height: 102px;" src="https://storage.wanin.tw/omp_ApexWin/news/e8bcac3b8b2596c89691fda880782eeb.webp" width="120" align="left"/>
+                    <img style="vertical-align: middle;" src="https://storage.wanin.tw/omp_ApexWin/news/bbfd811facf61e64a63a7c66418464f4.webp" width="25" height="102" align="left"/>鋸齒砲發射出去後，會對路徑上的所有物種進行攻擊，鋸齒砲經過一段時間會消失，並且會結算期間獲得的所有彩金。
+                </span>
+                <br/>
+                <br/>
+            </p>
+            <p style="color: #ffffff; font-family: 'Noto Sans TC', sans-serif; text-align: left;" align="left">
+                <span style="color: #ffffff;">
+                    <img style="max-width: 100%; height: 102px;" src="https://storage.wanin.tw/omp_ApexWin/news/834537e5d50f2c09bb1270e6e6e637d6.webp" width="120" align="left"/>
+                    <img style="vertical-align: middle;" src="https://storage.wanin.tw/omp_ApexWin/news/ed4573b97c3c9ce02739a80ef13205d1.webp" width="25" height="102" align="left"/>導彈砲發射出去後，會對區域內的所有物種進行攻擊，導彈砲經過一段時間會消失，並且會結算期間獲得的所有彩金。
+                </span>
+                <br/>
+                <br/>
+                <br/>
+            </p>
+            <p style="color: #ffffff; font-family: 'Noto Sans TC', sans-serif; text-align: center;">
+                <span style="font-size: small;">※30秒內沒發射特殊武器會由系統自動發射。</span>
+                <br/>
+                <br/>
+            </p>
+            <h2 style="color: #b9e216; font-family: 'Noto Sans TC', sans-serif; text-align: center;">介面說明</h2>
+            <p>
+                <img style="max-width: 100%; height: 338px; color: #ffffff; font-family: 'Noto Sans TC', sans-serif; text-align: center; display: block; margin-left: auto; margin-right: auto;" src="https://storage.wanin.tw/omp_ApexWin/news/96ff95a6f9f77770d594fde8a242da62.webp" width="600"/>
+                <br style="color: #ffffff; font-family: 'Noto Sans TC', sans-serif; text-align: center;"/>
+            </p>
+        </main>
+    </body>
+</html>
